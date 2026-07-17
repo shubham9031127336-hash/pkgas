@@ -11,6 +11,14 @@ RewriteEngine On
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
+# Block sensitive files from web access (keeps safe even if repo inside web root)
+<FilesMatch "\.(env|md|json|lock|txt)$">
+    Require all denied
+</FilesMatch>
+<IfModule mod_rewrite.c>
+    RewriteRule ^(\.git|\.github|docs|tests|scratch|Backup_working|cache/migration_) - [F,L]
+</IfModule>
+
 RewriteRule ^login$ admin/login.php [R=302,L]
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
