@@ -37,7 +37,7 @@ cache/dashboard_ajax.json
 
 # Scratch / temp files
 scratch/
-Backup_working/
+.Backup_working/
 after-*.txt
 *.png
 cylinders-page-snapshot.yml
