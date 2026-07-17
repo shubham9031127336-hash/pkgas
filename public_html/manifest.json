@@ -1,0 +1,26 @@
+﻿{
+    "name": "Prem Gas Solution - Industrial Gas Supplier",
+    "short_name": "Prem Gas Solution",
+    "description": "Prem Gas Solution is a leading industrial gas supplier in Khagaria, Bihar. Browse our products, track cylinders, and get in touch.",
+    "start_url": "/index.php",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#1e293b",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/Images/favicon.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/Images/favicon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["business", "industry"],
+    "lang": "en"
+}

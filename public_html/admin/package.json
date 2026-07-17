@@ -1,0 +1,16 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "Prem Gas Solution Admin - Dashboard WebSocket Server",
+  "main": "dashboard-ws-server.js",
+  "scripts": {
+    "start": "node dashboard-ws-server.js",
+    "ws:start": "node dashboard-ws-server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.21.1"
+  }
+}

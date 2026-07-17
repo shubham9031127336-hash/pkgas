@@ -1,0 +1,103 @@
+document.addEventListener('DOMContentLoaded', function () {
+    var pickerInputs = document.querySelectorAll('input[type="datetime-local"], input[type="date"], input[type="time"], input[data-picker]');
+    pickerInputs.forEach(function (el) {
+        if (el.getAttribute('data-picker') === 'none') return;
+        var inputType = el.getAttribute('type');
+        var mode = el.getAttribute('data-picker') || (inputType === 'date' ? 'date' : inputType === 'time' ? 'time' : 'datetime');
+        var isDateOnly = mode === 'date';
+        var config = {
+            allowInput: true,
+            animate: true,
+            position: 'auto',
+            monthSelectorType: 'static',
+            onChange: function (selectedDates, dateStr, inst) {
+                if (selectedDates.length) {
+                    inst.input.value = inst.formatDate(selectedDates[0], inst.config.dateFormat);
+                }
+            },
+            onOpen: function (dates, dateStr, inst) {
+                inst._origValue = inst.input.value || '';
+            },
+            onKeyDown: function (_, __, ___, ____, inst) {
+                if (_.key === 'Escape') {
+                    if (inst._origValue) {
+                        inst.setDate(inst._origValue, true);
+                    } else {
+                        inst.clear();
+                    }
+                    inst.close();
+                }
+            }
+        };
+        if (mode === 'date') {
+            config.enableTime = false;
+            config.dateFormat = 'Y-m-d';
+            config.altInput = true;
+            config.altFormat = 'd M Y';
+            config.time_24hr = true;
+            config.closeOnSelect = true;
+        } else if (mode === 'datetime') {
+            config.enableTime = true;
+            config.dateFormat = 'Y-m-d\\TH:i';
+            config.altInput = true;
+            config.altFormat = 'd M Y, h:i K';
+            config.time_24hr = true;
+            config.closeOnSelect = false;
+        } else if (mode === 'time') {
+            config.enableTime = true;
+            config.noCalendar = true;
+            config.dateFormat = 'H:i';
+            config.altInput = true;
+            config.altFormat = 'h:i K';
+            config.time_24hr = true;
+            config.closeOnSelect = false;
+        }
+        if (!isDateOnly) {
+            var _onReady = config.onReady || function () {};
+            config.onReady = function (dates, dateStr, inst) {
+                _onReady.call(this, dates, dateStr, inst);
+                if (inst.calendarContainer.querySelector('.flatpickr-btn-bar')) return;
+                var bar = document.createElement('div');
+                bar.className = 'flatpickr-btn-bar';
+                bar.innerHTML = '<button type="button" class="fp-btn fp-cancel" data-fp-cancel>Cancel</button><button type="button" class="fp-btn fp-save" data-fp-save>Save</button>';
+                bar.querySelector('[data-fp-save]').addEventListener('click', function () {
+                    var dt;
+                    if (inst.selectedDates.length) {
+                        dt = inst.selectedDates[0];
+                    } else if (inst._origValue) {
+                        dt = inst.parseDate(inst._origValue, inst.config.dateFormat);
+                    } else {
+                        dt = new Date();
+                    }
+                    inst.setDate(dt, true);
+                    fireChange(inst);
+                    inst.close();
+                });
+                bar.querySelector('[data-fp-cancel]').addEventListener('click', function () {
+                    if (inst._origValue) {
+                        inst.setDate(inst._origValue, true);
+                    } else {
+                        inst.clear();
+                    }
+                    fireChange(inst);
+                    inst.close();
+                });
+                inst.calendarContainer.appendChild(bar);
+            };
+        }
+        var fp = flatpickr(el, config);
+        var form = el.closest('form');
+        if (form) {
+            form.addEventListener('submit', function () {
+                if (fp && fp.selectedDates.length) {
+                    fp.input.value = fp.formatDate(fp.selectedDates[0], fp.config.dateFormat);
+                }
+            });
+        }
+    });
+
+    function fireChange(inst) {
+        var evt = new Event('change', { bubbles: true });
+        inst.input.dispatchEvent(evt);
+    }
+});

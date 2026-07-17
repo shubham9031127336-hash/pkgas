@@ -1,0 +1,164 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\xampp\\htdocs\\nutangasestsk.com\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/vendor-lot-advance-browser.spec.js",
+      "--headed",
+      "--timeout=180000"
+    ],
+    "configFile": "C:\\xampp\\htdocs\\nutangasestsk.com\\playwright.config.js",
+    "rootDir": "C:/xampp/htdocs/nutangasestsk.com/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/xampp/htdocs/nutangasestsk.com/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/xampp/htdocs/nutangasestsk.com/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.js"
+        ],
+        "timeout": 180000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/testing/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.1",
+    "workers": 10,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "vendor-lot-advance-browser.spec.js",
+      "file": "vendor-lot-advance-browser.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Vendor Lot Advance Payment Bug",
+          "file": "vendor-lot-advance-browser.spec.js",
+          "line": 66,
+          "column": 6,
+          "specs": [
+            {
+              "title": "VENDOR-LOT-ADVANCE: Dispatch with advance → receive → verify remaining is correct",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Not enough cylinders for test",
+                      "location": {
+                        "file": "C:\\xampp\\htdocs\\nutangasestsk.com\\tests\\vendor-lot-advance-browser.spec.js",
+                        "line": 98,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 5899,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Creating test data...\n"
+                        },
+                        {
+                          "text": "Navigating to send-cylinder.php...\n"
+                        },
+                        {
+                          "text": "Found 0 cylinder checkboxes\n"
+                        },
+                        {
+                          "text": "Cleaning up test data...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-16T12:32:31.107Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Not enough cylinders for test",
+                          "location": {
+                            "file": "C:\\xampp\\htdocs\\nutangasestsk.com\\tests\\vendor-lot-advance-browser.spec.js",
+                            "line": 98,
+                            "column": 12
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cb7f234fc4497744677d-9a91443c46fc30043404",
+              "file": "vendor-lot-advance-browser.spec.js",
+              "line": 72,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-07-16T12:32:30.637Z",
+    "duration": 6866.469,
+    "expected": 0,
+    "skipped": 1,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

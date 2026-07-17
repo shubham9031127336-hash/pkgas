@@ -1,0 +1,16 @@
+    .blog-editor-form { background: white; padding: 2.5rem; border-radius: 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid var(--admin-border); }
+    .blog-editor-form .form-control { padding: 1.25rem; border-radius: 16px; background: #f8fafc; border: 1px solid #e2e8f0; font-size: 1rem; width: 100%; box-sizing: border-box; }
+    .blog-editor-form .form-control:focus { border-color: var(--admin-accent); background: white; box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.1); outline: none; }
+    .blog-editor-form label { font-size: 0.85rem; color: var(--admin-muted); margin-bottom: 0.5rem; display: block; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
+    #editor { height: 500px; background: #f8fafc; border-radius: 0 0 16px 16px; border-color: #e2e8f0; font-size: 1.1rem; }
+    .ql-toolbar { border-radius: 16px 16px 0 0; border-color: #e2e8f0 !important; background: #f1f5f9; }
+    .tag { background: var(--admin-accent); color: white; padding: 4px 12px; border-radius: 99px; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; font-weight: 500; animation: tagPop 0.2s ease-out; }
+    .tag span { cursor: pointer; opacity: 0.7; font-size: 1.1rem; line-height: 1; }
+    .tag span:hover { opacity: 1; }
+    @keyframes tagPop { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .compression-badge { background: #0ea5e9; color: white; padding: 4px 10px; border-radius: 8px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem; display: none; }
+    #imagePreviewContainer { position: relative; width: 120px; height: 80px; }
+    #imagePreviewContainer.compressing::after { content: 'Compacting...'; position: absolute; inset: 0; background: rgba(255,255,255,0.8); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: var(--admin-accent); border-radius: 12px; }
+    .ql-editor img[data-compressed-size]::after { content: attr(data-saved-kb); position: absolute; background: #10b981; color: white; padding: 3px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; bottom: 5px; right: 5px; white-space: nowrap; }
+    .ql-editor img { position: relative; }
+    .ql-editor img:hover { opacity: 0.8; }

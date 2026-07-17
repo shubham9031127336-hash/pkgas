@@ -1,0 +1,25 @@
+# Frozen snapshot — do not edit
+Backup_working/
+
+# Dependencies
+node_modules/
+.opencode/node_modules/
+
+# Cache
+public_html/cache/
+
+# Secrets & config
+.env
+opencode.json
+public_html/admin/mail-config.php
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/

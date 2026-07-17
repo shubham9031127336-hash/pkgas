@@ -1,0 +1,36 @@
+.financial-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+.chip-rent { background: rgba(251,191,36,0.12); color: #b45309; }
+.chip-paid { background: rgba(34,197,94,0.1); color: var(--success); }
+.chip-dmg  { background: rgba(239,68,68,0.1);  color: var(--danger); }
+.modal-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+}
+.modal-sum-card {
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 10px;
+    border: 1px solid var(--admin-border);
+}
+.modal-sum-val {
+    font-size: 1.2rem;
+    font-weight: 800;
+    display: block;
+}
+.modal-sum-lbl {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--admin-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}

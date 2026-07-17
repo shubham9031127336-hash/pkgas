@@ -1,0 +1,100 @@
+/* Prem Gas Solution Portal — SVG Stroke Loaders */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+.loader-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.loader-overlay.fade-out {
+  opacity: 0;
+}
+.loader-svg-wrap {
+  width: 140px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader-svg {
+  width: 100%;
+  height: 100%;
+}
+.loader-stroke {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+}
+.loader-stroke.animate {
+  animation: drawLine 0.8s ease forwards;
+}
+.loader-message {
+  margin-top: 28px;
+  font-family: 'Outfit', -apple-system, sans-serif;
+  font-size: 1.05rem;
+  color: #475569;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  min-height: 1.6em;
+  text-align: center;
+  transition: opacity 0.35s ease;
+}
+.loader-message.hide {
+  opacity: 0;
+}
+.loader-message.animate-in {
+  animation: loaderFadeUp 0.4s ease forwards;
+}
+/* Per-type colors */
+.loader-invoice .loader-stroke { stroke: #2563eb; }
+.loader-invoice .pen-dot { fill: #2563eb; stroke: none; }
+.loader-profile .loader-stroke { stroke: #6366f1; }
+.loader-table .loader-stroke { stroke: #0ea5e9; }
+.loader-payment .loader-stroke { stroke: #10b981; }
+.loader-order .loader-stroke { stroke: #f59e0b; }
+.loader-exchange .loader-stroke { stroke: #8b5cf6; }
+.loader-dashboard .loader-stroke { stroke: #f43f5e; }
+/* Staggered animation delays */
+.loader-invoice .pen-body { animation-delay: 0s; }
+.loader-invoice .pen-nib { animation-delay: 0.15s; }
+.loader-invoice .pen-dot { opacity: 0; animation: fadeIn 0.4s ease 0.9s forwards; }
+.loader-invoice .sig-line { animation-delay: 0.6s; }
+.loader-invoice .sig-squiggle { animation-delay: 1s; }
+.loader-profile .profile-head { animation-delay: 0s; }
+.loader-profile .profile-body { animation-delay: 0.3s; }
+.loader-profile .profile-line { animation-delay: 0.6s; }
+.loader-table .doc-body { animation-delay: 0s; }
+.loader-table .doc-fold { animation-delay: 0.2s; }
+.loader-table .doc-line:nth-child(4) { animation-delay: 0.4s; }
+.loader-table .doc-line:nth-child(5) { animation-delay: 0.55s; }
+.loader-table .doc-line:nth-child(6) { animation-delay: 0.7s; }
+.loader-payment .pay-circle { animation-delay: 0s; }
+.loader-payment .pay-check { animation-delay: 0.5s; }
+.loader-order .order-box { animation-delay: 0s; }
+.loader-order .order-lid { animation-delay: 0.2s; }
+.loader-order .order-arrow { animation-delay: 0.5s; }
+.loader-exchange .exch-circle { animation-delay: 0s; }
+.loader-exchange .exch-arrow1 { animation-delay: 0.3s; }
+.loader-exchange .exch-arrow2 { animation-delay: 0.5s; }
+.loader-dashboard .dboard-bar:nth-child(1) { animation-delay: 0s; }
+.loader-dashboard .dboard-bar:nth-child(2) { animation-delay: 0.15s; }
+.loader-dashboard .dboard-bar:nth-child(3) { animation-delay: 0.3s; }
+.loader-dashboard .dboard-bar:nth-child(4) { animation-delay: 0.45s; }
+/* Keyframes */
+@keyframes drawLine { to { stroke-dashoffset: 0; } }
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes loaderFadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }

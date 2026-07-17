@@ -1,0 +1,20 @@
+@media print {
+    body { background:white !important; color:black !important; }
+    .sidebar,.top-bar,.tab-bar,.btn-primary,.btn-secondary,.top-bar-actions,header,footer,form,.no-print { display:none !important; }
+    .main-wrapper { margin-left:0 !important; width:100% !important; }
+    .content-container { padding:0 !important; }
+    .admin-card { border:none !important; box-shadow:none !important; padding:0 !important; margin:0 !important; }
+    .admin-table { border:1px solid #000 !important; }
+    .admin-table th, .admin-table td { border-bottom:1px solid #000 !important; padding:5px 8px !important; font-size:0.75rem !important; }
+    .print-header { display:block !important; margin-bottom:1.5rem; text-align:center; }
+    .print-header h1 { font-size:1.4rem; font-weight:800; }
+    .print-header p { font-size:0.8rem; color:#666; }
+}
+.tab-bar { display:flex; gap:0.5rem; border-bottom:1px solid var(--admin-border); padding-bottom:1px; margin-bottom:2rem; }
+.tab-btn { background:none; border:none; border-bottom:3px solid transparent; padding:0.75rem 1.25rem; font-weight:700; font-size:0.9rem; color:var(--admin-muted); cursor:pointer; transition:all 0.2s; }
+.tab-btn:hover { color:var(--admin-fg); }
+.tab-btn.active { color:var(--admin-accent); border-bottom-color:var(--admin-accent); }
+.rent-chip  { display:inline-block; padding:2px 8px; border-radius:6px; font-weight:700; font-size:0.78rem; background:rgba(251,191,36,0.12); color:#b45309; }
+.paid-chip  { display:inline-block; padding:2px 8px; border-radius:6px; font-weight:700; font-size:0.78rem; background:rgba(34,197,94,0.1); color:var(--success); }
+.dmg-chip   { display:inline-block; padding:2px 8px; border-radius:6px; font-weight:700; font-size:0.78rem; background:rgba(239,68,68,0.1); color:var(--danger); }
+.overdue-flag { font-size:0.7rem; padding:2px 7px; border-radius:20px; font-weight:700; background:rgba(239,68,68,0.1); color:var(--danger); }

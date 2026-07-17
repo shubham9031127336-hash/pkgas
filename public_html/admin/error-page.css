@@ -1,0 +1,26 @@
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    background: #f8fafc; color: #0f172a;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; padding: 2rem;
+  }
+  .error-card {
+    background: #fff; border-radius: 32px; padding: 4rem;
+    text-align: center; max-width: 480px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+    border: 1px solid #e2e8f0;
+  }
+  .error-code {
+    font-size: 6rem; font-weight: 800; color: #2563eb; line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .error-card h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+  .error-card p { color: #64748b; line-height: 1.6; margin-bottom: 2rem; }
+  .btn-home {
+    display: inline-block; padding: 0.75rem 2rem;
+    background: #2563eb; color: #fff; text-decoration: none;
+    border-radius: 12px; font-weight: 600;
+    transition: transform 0.2s;
+  }
+  .btn-home:hover { transform: translateY(-2px); }

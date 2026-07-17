@@ -1,0 +1,242 @@
+.receipt-page {
+    max-width: 520px;
+    margin: 0 auto;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.receipt {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    overflow: hidden;
+}
+
+.receipt-header {
+    text-align: center;
+    padding: 2rem 2rem 1.5rem;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.company-name {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #1e293b;
+    margin-bottom: 0.35rem;
+}
+
+.company-info {
+    font-size: 0.78rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.receipt-type {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 4px 16px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.receipt-body {
+    padding: 1.5rem 2rem;
+}
+
+.receipt-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.meta-left, .meta-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.meta-right {
+    text-align: right;
+}
+
+.meta-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+}
+
+.meta-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.customer-info {
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.ci-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+    font-size: 0.85rem;
+}
+
+.ci-label {
+    color: #64748b;
+    font-weight: 600;
+}
+
+.ci-value {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.transaction-badge {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 6px 18px;
+    border: 2px solid;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.receipt-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.receipt-table th {
+    padding: 8px 0;
+    border-bottom: 2px solid #e2e8f0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+}
+
+.receipt-table td {
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.totals {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 1rem 0;
+    border-top: 1px dashed #e2e8f0;
+    margin-bottom: 1rem;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+}
+
+.total-row span {
+    color: #64748b;
+}
+
+.total-row strong {
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.receipt-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 2rem;
+    gap: 1rem;
+}
+
+.signature-area {
+    text-align: center;
+    flex: 1;
+}
+
+.signature-line {
+    border-bottom: 1px solid #cbd5e1;
+    height: 44px;
+    margin-bottom: 6px;
+}
+
+.signature-area p {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #94a3b8;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.stamp-area {
+    text-align: center;
+}
+
+.barcode {
+    color: #1e293b;
+    margin-bottom: 2px;
+}
+
+.receipt-number {
+    font-family: monospace;
+    font-size: 0.65rem;
+    color: #64748b;
+}
+
+.receipt-note {
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    border-top: 1px solid #f1f5f9;
+    background: #fafbfc;
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    .sidebar, .top-bar, .top-bar-actions {
+        display: none !important;
+    }
+    .main-wrapper {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+    .content-container {
+        padding: 0 !important;
+    }
+    .receipt-page {
+        max-width: 100%;
+        padding: 0;
+    }
+    .receipt {
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    body {
+        background: #fff !important;
+    }
+}

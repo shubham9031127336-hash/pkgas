@@ -1,0 +1,40 @@
+# Rewrite sitemap.xml to sitemap.php
+RewriteEngine On
+
+# Security: hide Apache version from error pages and HTTP headers
+# ServerSignature Off (not allowed in .htaccess context)
+<IfModule mod_headers.c>
+    Header unset Server
+</IfModule>
+
+# Force HTTPS (disabled for local XAMPP)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+RewriteRule ^login$ admin/login.php [R=302,L]
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+# Redirect www to non-www (uncomment if needed)
+# RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+# RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Clean URLs (optional but good for SEO)
+# This allows post.php?slug=title to be just /post/title if you want later.
+
+# GZIP Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+</IfModule>

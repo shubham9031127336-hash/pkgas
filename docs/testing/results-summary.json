@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-07-14T13:17:40.000Z",
+  "summary": {
+    "total": 133,
+    "passed": 133,
+    "failed": 0,
+    "skipped": 0,
+    "pass_rate_pct": 100.0
+  },
+  "phases": {
+    "phase1": {"label": "Core Business Flows (P0)", "tests": 25, "passed": 25},
+    "phase2": {"label": "Transaction & Settlement (P1)", "tests": 18, "passed": 18},
+    "phase3": {"label": "Customer & Portal (P2)", "tests": 32, "passed": 32},
+    "phase4": {"label": "Platform Admin (P3)", "tests": 29, "passed": 29, "subsections": {
+      "Gas Types CRUD (4.1)": 4, "Cylinders List & Filter (4.2)": 4, "Cylinder Track/Detail (4.3)": 2,
+      "Users & RBAC (4.4)": 5, "Settings Page (4.5)": 2, "Blog CRUD (4.6)": 4,
+      "GST Module (4.7)": 3, "Expenses (4.8)": 3, "Reports (4.9)": 2
+    }},
+    "phase5": {"label": "AI Assistant (P3)", "tests": 6, "passed": 6},
+    "phase6": {"label": "Public Site (P3)", "tests": 16, "passed": 16},
+    "phase7": {"label": "Cross-Cutting (P4)", "tests": 7, "passed": 7}
+  },
+  "overall_progress": {
+    "phases_complete": 7,
+    "phases_total": 7,
+    "tests_run_all_phases": 133,
+    "tests_passed_all_phases": 133
+  },
+  "deep_test_doc": "docs/testing/DEEP_FUNCTIONAL_TEST_PLAN.md",
+  "deep_test_files": {
+    "phase1-deep.spec.js": {"status": "not_created", "tests_planned": 30, "tests_implemented": 0},
+    "phase2-deep.spec.js": {"status": "not_created", "tests_planned": 20, "tests_implemented": 0},
+    "phase3-deep.spec.js": {"status": "not_created", "tests_planned": 15, "tests_implemented": 0}
+  },
+  "warnings": [
+    "DI7.1.1: 17 orphan payments found (pre-existing data from deleted customers)"
+  ],
+  "failures": []
+}

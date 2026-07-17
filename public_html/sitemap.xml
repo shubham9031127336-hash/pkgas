@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.schem.org/schemas/sitemap/0.9">
+
+<url>
+  <loc>https://pkgas.com/</loc>
+  <priority>1.0</priority>
+</url>
+<url>
+  <loc>https://pkgas.com/blog.php</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://pkgas.com/archive.php</loc>
+  <priority>0.7</priority>
+</url>
+</urlset>

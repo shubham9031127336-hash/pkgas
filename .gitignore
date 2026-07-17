@@ -1,0 +1,53 @@
+# Environment
+.env
+.env.local
+.env.production
+
+# Email SMTP credentials
+public_html/admin/mail-config.php
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# OpenCode config (contains API keys)
+opencode.json
+
+# Playwright MCP artifacts
+.playwright-mcp/
+
+# Test results / Playwright artifacts
+test-results/
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Dashboard AJAX cache (auto-generated)
+cache/dashboard_ajax.json
+
+# Scratch / temp files
+scratch/
+Backup_working/
+after-*.txt
+*.png
+cylinders-page-snapshot.yml
+dashboard-snapshot.yml
+current-tab-state.md
+modal-state.txt
+cylinders-page-after-refresh
+backup_*.sql
+backup_test.sql
+
+# Root-level temp/scratch text files
+receive-cylinder-*.txt
+default.php
